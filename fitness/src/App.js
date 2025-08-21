@@ -4,15 +4,6 @@ import Home from "./page/Home";
 import New from "./page/New";
 import Edit from "./page/Edit";
 import Exercise from "./page/Exercise";
-<<<<<<< HEAD
-import React, { useContext, useRef, useState } from "react";
-
-export const ExerciseStateContext = React.createContext();
-
-function App() {
-  const today = new Date();
-  const noRef = useRef(3);
-=======
 import React, { useState, useReducer, useEffect, useRef } from "react";
 
 const today = new Date(); 
@@ -73,10 +64,11 @@ export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
 function App() {
->>>>>>> a8718529cc26739df9fb8638e5167751d4e04ed7
 
   const [data, dispatch] = useReducer(reducer, []);
   const noRef = useRef(3);
+
+  const [dataa,setdataa] = useState(mokData);
 
   useEffect(() => {
     dispatch({
@@ -85,47 +77,6 @@ function App() {
     });
   }, []);
 
-<<<<<<< HEAD
-  const [form, setForm] = useState({
-    no: noRef + 1,
-    title: "",
-    weight: 0,
-    set: 0,
-    count: 0,
-    date: 0,
-    calorie: 0,
-  });
-
-  const mokData = [
-    {
-      no: 0,
-      title: "밴체프레스",
-      weight: 60,
-      set: 5,
-      count: 12,
-      date: formattedDate,
-      calorie: 50,
-    },
-    {
-      no: 1,
-      title: "인클라인 벤치프레스",
-      weight: 60,
-      set: 5,
-      count: 12,
-      date: formattedDate,
-      calorie: 50,
-    },
-    {
-      no: 2,
-      title: "딥스",
-      weight: 60,
-      set: 5,
-      count: 12,
-      date: formattedDate,
-      calorie: 50,
-    },
-  ];
-=======
   const onCreate = (title, weight, set, count, date, calorie) => {
     dispatch({
       type:"CREATE",
@@ -156,24 +107,9 @@ function App() {
       },
     });
   };
->>>>>>> a8718529cc26739df9fb8638e5167751d4e04ed7
-
-  const [data, setData] = useState(mokData);
 
   return (
-<<<<<<< HEAD
-    <ExerciseStateContext value={data}>
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/New/" element={<New />} />
-          <Route path="/Edit" element={<Edit />} />
-          <Route path="/exercise" element={<Exercise />} />
-        </Routes>
-      </div>
-    </ExerciseStateContext>
-=======
-    <DiaryStateContext.Provider value={data}>
+    <DiaryStateContext.Provider value={dataa}>
       <DiaryDispatchContext.Provider
         value={{
           onCreate,
@@ -190,7 +126,6 @@ function App() {
         </div>
       </DiaryDispatchContext.Provider>  
     </DiaryStateContext.Provider>
->>>>>>> a8718529cc26739df9fb8638e5167751d4e04ed7
   );
 }
 

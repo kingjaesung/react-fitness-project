@@ -2,16 +2,16 @@
 import Header from '../component/Header'
 import FitnessList from '../component/FitnessList'
 
-const Home = ({data}) => {
+const Home = ({dataa}) => {
 
    
-   
-
+  
     return (
         <div> 
             <Header left={"안녕"}/>
-            <FitnessList data={data} />
-           
+            <FitnessList data={dataa} />
+            {dataa}
+
         </div>
     )
 }
