@@ -1,21 +1,17 @@
-<<<<<<< HEAD
+
 import Header from '../component/Header'
 import FitnessList from '../component/FitnessList'
 
-const Home = () => {
+const Home = ({data}) => {
+
+   
+   
+
     return (
         <div> 
-            <Header/>
-            <FitnessList/>
-=======
-import Header from "../component/Header";
-
-const Home = () => {
-    return (
-        <div>
-            <Header />
-
->>>>>>> 078a7b8a7019a2fb587852d7e3cdf774f40a508e
+            <Header left={"안녕"}/>
+            <FitnessList data={data} />
+           
         </div>
     )
 }
