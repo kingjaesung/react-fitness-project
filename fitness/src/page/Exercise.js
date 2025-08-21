@@ -1,7 +1,7 @@
 const Exercise = () => {
     return(
         <div>
-            엑서사이즈
+            상세 페이지
         </div> 
     )
 }
