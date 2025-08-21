@@ -1,7 +1,9 @@
+import Update from "../component/Update";
+
 const Edit = () => {
     return (
         <div>
-            수정 페이지
+            <Update />
         </div>
     )
 }
