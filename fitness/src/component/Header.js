@@ -1,6 +1,6 @@
 import './Header.css';
 
-const Header = ({title, left}) => {
+const Header = ({title, left, right}) => {
     return(
         <div className='Header'>
             <div className='header_left'>
@@ -12,7 +12,7 @@ const Header = ({title, left}) => {
             </div>
 
             <div className='header_right'>
-                test right
+                {right}
             </div>
         </div>
     );

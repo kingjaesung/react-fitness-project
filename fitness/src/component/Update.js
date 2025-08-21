@@ -1,7 +1,12 @@
 import Header from "./Header";
 import Button from "./Button";
+import { useState } from "react";
 
 const Update = ({data}) => {
+    const onClick = () =>{
+        //submit();
+    }
+
     return (
         <div className="update">
             <Header />
@@ -28,7 +33,7 @@ const Update = ({data}) => {
                     <input type="text" class="kall"></input>
                 </div>
             </div>
-            <Button text="수정하기" type="default"/>        
+            <Button text="수정하기" type="default" onClick={onClick}/>        
         </div>
     );
 };
