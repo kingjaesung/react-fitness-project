@@ -1,7 +1,11 @@
+import Header from '../component/Header'
+import FitnessList from '../component/FitnessList'
+
 const Home = () => {
     return (
         <div> 
-            핏~니스 홈
+            <Header/>
+            <FitnessList/>
         </div>
     )
 }
