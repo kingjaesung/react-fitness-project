@@ -109,7 +109,7 @@ function App() {
   };
 
   return (
-    <DiaryStateContext.Provider value={dataa}>
+    <DiaryStateContext.Provider value={data}>
       <DiaryDispatchContext.Provider
         value={{
           onCreate,
@@ -118,10 +118,10 @@ function App() {
       >
         <div>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/New/:no" element={<New />} />
-            <Route path="/Edit" element={<Edit />} />
-            <Route path="/exercise" element={<Exercise />} /> 
+            <Route path="/" element={<Home date={formattedDate}/>} />
+            <Route path="/New" element={<New />} />
+            <Route path="/Edit/:no" element={<Edit />} />
+            <Route path="/exercise/:no" element={<Exercise />} /> 
           </Routes>
         </div>
       </DiaryDispatchContext.Provider>  
