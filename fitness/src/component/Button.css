@@ -1,19 +1,4 @@
 .Button {
-<<<<<<< HEAD
-
-}
-
-.Button_default {
-
-}
-
-.Button_positive {
-    background-color: lightgreen;
-}
-
-.Button_negative {
-    background-color: brown
-=======
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -35,5 +20,4 @@
 .Button_negative{
     background-color: #fd565f;
     color:white;
->>>>>>> 06381d9010bdf6cea9fc751008521054aab2403a
 }
