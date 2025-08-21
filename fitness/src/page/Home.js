@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Home = ({date}) => {
     const data = useContext(DiaryStateContext);
+    console.log(data);
     const navigate = useNavigate();
 
     const onClick = () => {

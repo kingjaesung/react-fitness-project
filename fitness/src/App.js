@@ -53,9 +53,13 @@ function reducer(state, action) {
       return [action.data, ...state];
     }
     case "UPDATE": {
-      return state.map((it)=> String(it.no) === String(action.data.id) ? {...action.data} : it);      }
+      return state.map((it)=> String(it.no) === String(action.data.no) ? {...action.data} : it);      
+    }
     default: {
     return state;
+    }
+    case "DELETE" : {
+      return state.filter((it) => String(it.no) !== String(action.targetNo));
     }
   }
 }
@@ -68,7 +72,6 @@ function App() {
   const [data, dispatch] = useReducer(reducer, []);
   const noRef = useRef(3);
 
-  const [dataa,setdataa] = useState(mokData);
 
   useEffect(() => {
     dispatch({
@@ -93,20 +96,28 @@ function App() {
     noRef.current += 1;
   };
 
-  const onUpdate = (targetNo, title, weight, set, count, date, calorie) => {
+  const onUpdate = (no, title, weight, set, count, date ,calorie) => {
+    console.log("dispatch 호출 전", { no, title, weight, set, count, date, calorie });
     dispatch({
       type: "UPDATE",
       data: {
-        no: targetNo,
+        no,
         title,
         weight,
         set,
         count,
-        date: formattedDate,
+        date,
         calorie,
       },
     });
   };
+
+  const onDelete = (targetNo) => {
+    dispatch({
+      type : "DELETE",
+      targetNo,
+    })
+  }
 
   return (
     <DiaryStateContext.Provider value={data}>
@@ -114,6 +125,7 @@ function App() {
         value={{
           onCreate,
           onUpdate,
+          onDelete
         }}
       >
         <div>
