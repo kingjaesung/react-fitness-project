@@ -1,6 +1,6 @@
 const Home = () => {
     return (
-        <div>
+        <div> 
             핏~니스 홈
         </div>
     )

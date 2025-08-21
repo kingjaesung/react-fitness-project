@@ -1,6 +1,6 @@
 const New = () => {
     return (
-        <div>
+        <div> 
             New 페이지
         </div>
     )

@@ -7,7 +7,7 @@ import Exercise from "./page/Exercise";
 import { useState } from "react";
 
 function App() {
-  const today = new Date();
+  const today = new Date(); 
 
   const year = today.getFullYear(); // 연도 (4자리)
   const month = String(today.getMonth() + 1).padStart(2, "0"); // 월 (1~12, 2자리로 맞춤)
