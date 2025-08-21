@@ -1,3 +1,4 @@
+import "./Update.css";
 import Header from "./Header";
 import Button from "./Button";
 import { useState } from "react";

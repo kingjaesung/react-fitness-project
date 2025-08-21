@@ -1,0 +1,15 @@
+.Button {
+
+}
+
+.Button_default {
+
+}
+
+.Button_positive {
+    background-color: lightgreen;
+}
+
+.Button_negative {
+    background-color: brown
+}
