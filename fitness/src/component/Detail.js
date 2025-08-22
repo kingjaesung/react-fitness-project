@@ -1,5 +1,19 @@
 import "./Detail.css";
 
+<<<<<<< HEAD
+const Detail = ({ title, weight, set, count, date, calorie, content }) => {
+    return (
+        <div className={"Detail_div Detail"}>
+            <div>{title}</div>
+            <div>{weight}</div>
+            <div>{set}</div>
+            <div>{count}</div>
+            <div>{date}</div>
+            <div>{calorie}</div>
+            <div>{content}</div>
+        </div>
+    );
+=======
 const Detail = ({ title, weight, set, count, date, calorie }) => {
   return (
     <div className={["Detail_div Detail"].join(" ")}>
@@ -29,6 +43,7 @@ const Detail = ({ title, weight, set, count, date, calorie }) => {
       </div>
     </div>
   );
+>>>>>>> 2fa7cf142806d4b449738e08ef5ff3eb0333d5ac
 };
 
 export default Detail;

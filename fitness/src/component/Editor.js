@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 const Editor = ({ initData, onSubmit }) => {
   const [state, setState] = useState({
     title: "",
-    weight: 0,
-    set: 0,
-    count: 0,
+    weight: 20,
+    set: 1,
+    count: 1,
     date: "",
     calorie: 0,
     content: "",
@@ -107,6 +107,8 @@ const Editor = ({ initData, onSubmit }) => {
               name="weight"
               value={state.weight}
               onChange={handleChange}
+              min={20}
+              step={5}
             />
             <label>세트</label>
             <input
@@ -114,6 +116,7 @@ const Editor = ({ initData, onSubmit }) => {
               name="set"
               value={state.set}
               onChange={handleChange}
+              min={1}
             />
             <label>반복횟수</label>
             <input
@@ -121,17 +124,25 @@ const Editor = ({ initData, onSubmit }) => {
               name="count"
               value={state.count}
               onChange={handleChange}
+              step={5}
+              min={1}
             />
           </div>
           <div className="calInputDiv">
             <label>칼로리 소모량</label>
             <input 
-            type="text" 
-            value={state.calorie} 
+            type="text"
+            name="calorie"
+            value={state.set * state.count * 8} 
             readOnly 
             />
           </div>
-          <textarea placeholder="오늘 운동 기록" />
+          <textarea 
+            placeholder="오늘 운동 기록" 
+            name="content" 
+            value={state.content}
+            onChange={handleChange}
+          />
         </div>
       </div>
 
