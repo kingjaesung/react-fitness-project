@@ -3,11 +3,11 @@ import Button from "../component/Button";
 import Detail from "../component/Detail";
 import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { DiaryDispatchContext, DiaryStateContext } from "../App";
+import { FitnessDispatchContext, FitnessStateContext } from "../App";
 
 const Exercise = () => {
-    const data = useContext(DiaryStateContext);
-    const {onDelete} = useContext(DiaryDispatchContext);
+    const data = useContext(FitnessStateContext);
+    const {onDelete} = useContext(FitnessDispatchContext);
 
 
 
@@ -22,7 +22,7 @@ const Exercise = () => {
     }
 
     const onClickDelete = () =>{
-        if(window.confirm("일기 삭제 할까요? 복구 안됩니다!"));
+        if(window.confirm("항목을 삭제할까요? 복구 안됩니다!"));
         onDelete(target.no);
         navigate("/",{replace:true });
     }

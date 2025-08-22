@@ -2,12 +2,11 @@ import Header from '../component/Header'
 import FitnessList from '../component/FitnessList'
 import Button from '../component/Button'
 import { useContext } from 'react'
-import { DiaryStateContext } from '../App'
+import { FitnessStateContext } from '../App'
 import { useNavigate } from 'react-router-dom'
 
 const Home = ({date}) => {
-    const data = useContext(DiaryStateContext);
-    console.log(data);
+    const data = useContext(FitnessStateContext);
     const navigate = useNavigate();
 
     const onClick = () => {
