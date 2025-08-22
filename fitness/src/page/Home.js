@@ -20,7 +20,7 @@ const Home = ({date}) => {
                 left={<Button type="default" text="<"/>}
                 right={<Button type="default"text=">"/>}
             />
-            <Button type="defalut" text="등록" onClick={onClick}/><hr />
+            <Button type="default" text="등록" onClick={onClick}/><hr />
             {data.map((it) =>(
                 <FitnessList key={it.no} value={it}/>
             ))}

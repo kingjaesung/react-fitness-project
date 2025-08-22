@@ -14,25 +14,17 @@ const Edit = () => {
 
   const eItem = data.find((it) => String(it.no) === no);
 
-  const [state, setState] = useState(eItem);
+  
 
   const goBack = () => {
     navigate(-1);
   };
 
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-
-    setState({
-        ...state,
-        [name]: value, 
-    });
-  };
+  
 
   const clickOnUpdate = (eItem) => {
     if (window.confirm("일기를 정말 수정할까요?")) {
-      const { date, no, weight, title, count, set, calorie } = state;
+      const { date, no, weight, title, count, set, calorie } = eItem;
       console.log(date, no, weight, title, count, set, calorie);
       onUpdate(no, title, weight, set, count, date, calorie);
       navigate("/", { replace: true });
@@ -45,11 +37,7 @@ const Edit = () => {
         title={"상세운동 수정"}      
       />
 
-      <Editor 
-      initData={state}
-        onSubmit ={clickOnUpdate}
-        handleOnChange={handleChange}
-       />
+      <Editor  initData={eItem} onSubmit={clickOnUpdate}/>
 
     </div>
   );
