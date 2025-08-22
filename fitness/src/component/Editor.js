@@ -9,13 +9,8 @@ const Editor = ({ initData, onSubmit, handleOnChange }) => {
 
   const { date, no, weight, title, count, set, calorie } = initData;
 
-
-<<<<<<< HEAD
-  console.log("initdata"+initData.title);
-  return (
-    <div className="Editor">
-      {/* 날짜 */}
-=======
+    return(
+        <div>
             {/* 운동 루틴 */}
             <div className="editor_section">
                 <h4>운동 루틴 기록✏️</h4>
@@ -24,24 +19,7 @@ const Editor = ({ initData, onSubmit, handleOnChange }) => {
                         <label>제목</label>
                         <input type='text'></input>
                     </div>
-                    <div className='numberInputDiv'>
-                        <label>무게(단위:Kg)</label>
-                        <input type='number' />
-                        <label>세트</label>
-                        <input type='number' />
-                        <label>반복횟수</label>
-                        <input type='number' />
-                    </div>
-                    <div className='calInputDiv'>
-                        <label>칼로리 소모량</label>
-                        <input type='text' readOnly />
-                    </div>
-                    <textarea placeholder="오늘 운동 기록" />
-                </div>
-            </div>
->>>>>>> 4651ffe209a782c162ea0e0977075f73be4246f8
-
-      <div className="editor_section">
+                      <div className="editor_section">
         <h4>날짜 입력📆</h4>
         <div className="input_wrapper">
           <input
@@ -107,13 +85,15 @@ const Editor = ({ initData, onSubmit, handleOnChange }) => {
         </div>
       </div>
 
+    
+
       {/* 버튼 */}
       <div className="editor_section bottom_section">
         <Button text={"취소"} onClick={handleGoBack} />
         <Button text={"작성 완료"} type={"positive"} onClick={onSubmit} />
       </div>
     </div>
-  );
-};
+
+)
 
 export default Editor;
