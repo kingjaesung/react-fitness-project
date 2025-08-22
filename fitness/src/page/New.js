@@ -3,12 +3,12 @@ import Header from "../component/Header";
 import Button from "../component/Button";
 import Editor from "../component/Editor";
 import { useContext } from "react";
-import { DiaryDispatchContext } from "../App";
+import { FitnessDispatchContext } from "../App";
 
 
 const New = () => {
     const navigate = useNavigate();
-    const {onCreate} = useContext(DiaryDispatchContext);
+    const {onCreate} = useContext(FitnessDispatchContext);
     
     const goBack = () => {
         navigate(-1);
