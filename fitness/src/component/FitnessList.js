@@ -1,6 +1,7 @@
 import "./Fitness.css";
 import { useNavigate } from "react-router-dom";
 
+<<<<<<< HEAD
 const FitnessList = ({year, month, value}) => {
   const navigate = useNavigate();
 
@@ -34,6 +35,27 @@ const FitnessList = ({year, month, value}) => {
       navigate(`/exercise/${no}`);
     }
   }
+=======
+const FitnessList = ({ value }) => {
+  const navigate = useNavigate();
+
+  const month = new Date(
+    new Date().getFullYear(),
+    new Date().getMonth() + 1,
+    0
+  ).getDate();
+  const days = Array.from({ length: month }, (_, index) => index + 1);
+  const weeks = [];
+  for (let i = 0; i < days.length; i += 7) {
+    weeks.push(days.slice(i, i + 7));
+  }
+
+  const onClick = (no) => {
+    if (!no && no !== 0) return;
+
+    navigate(`/exercise/${no}`);
+  };
+>>>>>>> 0c7df3769bb733093758a44e7c7d1e659e7fa024
 
   return (
     <tbody>
@@ -44,6 +66,7 @@ const FitnessList = ({year, month, value}) => {
               return <td key={`empty-${wIndex}-${dIndex}`}></td>
             }
             const item = value.find(
+<<<<<<< HEAD
               (it) => Number(it.date.split("-")[2]) === day);
             
               // 토요일과 일요일에 해당하는 클래스 이름 정의
@@ -61,6 +84,25 @@ const FitnessList = ({year, month, value}) => {
                   <label>{day}일</label>
                 </td>
               )
+=======
+              (it) => Number(it.date.split("-")[2]) === day
+            );
+
+            return (
+              <td
+                key={month}
+                onClick={() => item && onClick(item.no)}
+                className={
+                  item && item.no !== undefined && item.no !== null
+                    ? "include"
+                    : ""
+                }
+              >
+                <label >{day}일</label>
+                <br />
+              </td>
+            );
+>>>>>>> 0c7df3769bb733093758a44e7c7d1e659e7fa024
           })}
         </tr>
       ))}

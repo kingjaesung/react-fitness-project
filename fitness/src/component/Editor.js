@@ -13,6 +13,7 @@ const Editor = ({ initData, onSubmit }) => {
     calorie: 0,
     content: "",
   });
+
   const navigate = useNavigate();
   const [previewUrl, setPreviewUrl] = useState(null);
 
@@ -50,6 +51,18 @@ const Editor = ({ initData, onSubmit }) => {
       [name]: value,
     });
   };
+
+  const contentHandleChange= (e) => {
+    
+    const value = e.target.value;
+
+    setState({
+      ...state,
+      content: value
+    })
+  }
+
+  console.log(state.content);
 
   return (
     <div className="Editor">
@@ -133,7 +146,7 @@ const Editor = ({ initData, onSubmit }) => {
             <input 
             type="text"
             name="calorie"
-            value={state.set * state.count * 8} 
+            value={state.set * state.count * 0.8} 
             readOnly 
             />
           </div>
@@ -141,7 +154,7 @@ const Editor = ({ initData, onSubmit }) => {
             placeholder="오늘 운동 기록" 
             name="content" 
             value={state.content}
-            onChange={handleChange}
+            onChange={contentHandleChange}
           />
         </div>
       </div>
