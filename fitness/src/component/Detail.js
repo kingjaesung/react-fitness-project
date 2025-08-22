@@ -1,20 +1,6 @@
 import "./Detail.css";
 
-<<<<<<< HEAD
 const Detail = ({ title, weight, set, count, date, calorie, content }) => {
-    return (
-        <div className={"Detail_div Detail"}>
-            <div>{title}</div>
-            <div>{weight}</div>
-            <div>{set}</div>
-            <div>{count}</div>
-            <div>{date}</div>
-            <div>{calorie}</div>
-            <div>{content}</div>
-        </div>
-    );
-=======
-const Detail = ({ title, weight, set, count, date, calorie }) => {
   return (
     <div className={["Detail_div Detail"].join(" ")}>
       <div className="item">
@@ -41,9 +27,12 @@ const Detail = ({ title, weight, set, count, date, calorie }) => {
         <label>소모 칼로리 : </label>
         <div>{calorie}</div>
       </div>
+      <div className="item">
+        <label>운동기록 : </label>
+        <div>{content}</div>
+      </div>
     </div>
   );
->>>>>>> 2fa7cf142806d4b449738e08ef5ff3eb0333d5ac
 };
 
 export default Detail;
