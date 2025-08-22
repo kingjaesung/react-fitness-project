@@ -9,8 +9,6 @@ const Exercise = () => {
     const data = useContext(FitnessStateContext);
     const {onDelete} = useContext(FitnessDispatchContext);
 
-
-
     const navigate = useNavigate();
 
     const {no} = useParams();
