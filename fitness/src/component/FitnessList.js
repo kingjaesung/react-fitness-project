@@ -4,20 +4,13 @@ import { useNavigate } from "react-router-dom";
 const FitnessList = ({value}) => {
   const navigate = useNavigate();
 
-  const onClick = () => {
-    navigate(`/exercise/${value.no}`);
+  const onClick = (no) => {
+    navigate(`/exercise/${no}`);
   }
 
   return (
-    <div onClick={onClick}>
-      <div>
-        {value.title}<br />
-        {value.weight}<br />
-        {value.set}<br />
-        {value.count}<br />
-        {value.date}<br />
-        {value.calorie}<br />
-      </div><hr />
+    <div>
+      {value.map((it, index) => (<div key={index} onClick={() => onClick(it.no)}>{it.title}</div>))}
     </div>
   );
 };

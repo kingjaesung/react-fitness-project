@@ -10,9 +10,15 @@ const today = new Date();
 
 const year = today.getFullYear(); // 연도 (4자리)
 const month = String(today.getMonth() + 1).padStart(2, "0"); // 월 (1~12, 2자리로 맞춤)
-const day = String(today.getDate()).padStart(2, "0"); // 일 (2자리로 맞춤)
+//const day = String(today.getDate()).padStart(2, "0"); // 일 (2자리로 맞춤)
+const day1 = String(today.getDate()).padStart(2, "0");
+const day2 = String(today.getDate() + 1).padStart(2, "0");
+const day3 = String(today.getDate() + 2).padStart(2, "0");
 
-const formattedDate = `${year}-${month}-${day}`;
+//const formattedDate = `${year}-${month}-${day}`;
+const formattedDate1 = `${year}-${month}-${day1}`;
+const formattedDate2 = `${year}-${month}-${day2}`;
+const formattedDate3 = `${year}-${month}-${day3}`;
 
 const mokData = [
   {
@@ -21,7 +27,7 @@ const mokData = [
     weight: 60,
     set: 5,
     count: 12,
-    date: formattedDate,
+    date: formattedDate1,
     calorie: 50,
     content: "test1",
   },
@@ -31,7 +37,7 @@ const mokData = [
     weight: 60,
     set: 5,
     count: 12,
-    date: formattedDate,
+    date: formattedDate2,
     calorie: 50,
     content: "test2",
   },
@@ -41,7 +47,7 @@ const mokData = [
     weight: 60,
     set: 5,
     count: 12,
-    date: formattedDate,
+    date: formattedDate3,
     calorie: 50,
     content: "test2",
   },
@@ -83,7 +89,7 @@ function App() {
     });
   }, []);
 
-  const onCreate = (title, weight, set, count, calorie, content) => {
+  const onCreate = (title, weight, set, count, date, calorie, content) => {
     dispatch({
       type:"CREATE",
       data:{
@@ -92,7 +98,7 @@ function App() {
         weight,
         set,
         count,
-        date: formattedDate,
+        date,
         calorie,
         content,
       },
@@ -135,7 +141,7 @@ function App() {
       >
         <div>
           <Routes>
-            <Route path="/" element={<Home date={formattedDate}/>} />
+            <Route path="/" element={<Home />} />
             <Route path="/New" element={<New />} />
             <Route path="/Edit/:no" element={<Edit />} />
             <Route path="/exercise/:no" element={<Exercise />} /> 
