@@ -1,10 +1,6 @@
 import "./Detail.css";
 
-<<<<<<< HEAD
-const Detail = ({ title, weight, set, count, date, calorie }) => {
-=======
 const Detail = ({ title, weight, set, count, date, calorie, content }) => {
->>>>>>> 2766b9ac5ce951e3e239ba2b9bd0bcb1112be2f4
   return (
     <div className={["Detail_div Detail"].join(" ")}>
       <div className="item">
