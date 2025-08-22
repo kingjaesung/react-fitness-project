@@ -1,7 +1,10 @@
-
-
 .list_main > div {
 
   cursor: pointer;        /* 버튼 느낌 */
   user-select: none;      /* 드래그 방지 */
+}
+
+.include{
+    background-color: #64c964;
+    color: white;
 }
