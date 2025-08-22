@@ -24,9 +24,9 @@ const Edit = () => {
 
   const clickOnUpdate = (eItem) => {
     if (window.confirm("일기를 정말 수정할까요?")) {
-      const { date, no, weight, title, count, set, calorie } = eItem;
-      console.log(date, no, weight, title, count, set, calorie);
-      onUpdate(no, title, weight, set, count, date, calorie);
+      const { date, no, weight, title, count, set, calorie, content} = eItem;
+      console.log(date, no, weight, title, count, set, calorie, content);
+      onUpdate(no, title, weight, set, count, date, calorie, content);
       navigate("/", { replace: true });
     }
   };

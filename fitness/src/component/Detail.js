@@ -1,6 +1,6 @@
 import "./Detail.css";
 
-const Detail = ({ title, weight, set, count, date, calorie }) => {
+const Detail = ({ title, weight, set, count, date, calorie, content }) => {
     return (
         <div className={"Detail_div Detail"}>
             <div>{title}</div>
@@ -9,6 +9,7 @@ const Detail = ({ title, weight, set, count, date, calorie }) => {
             <div>{count}</div>
             <div>{date}</div>
             <div>{calorie}</div>
+            <div>{content}</div>
         </div>
     );
 };

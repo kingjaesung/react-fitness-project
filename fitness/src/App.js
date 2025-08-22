@@ -28,7 +28,7 @@ const mokData = [
     set: 5,
     count: 12,
     date: formattedDate1,
-    calorie: 50,
+    calorie: 240,
     content: "test1",
   },
   {
@@ -38,7 +38,7 @@ const mokData = [
     set: 5,
     count: 12,
     date: formattedDate2,
-    calorie: 50,
+    calorie: 240,
     content: "test2",
   },
   {
@@ -48,7 +48,7 @@ const mokData = [
     set: 5,
     count: 12,
     date: formattedDate3,
-    calorie: 50,
+    calorie: 240,
     content: "test2",
   },
 ];
@@ -89,7 +89,8 @@ function App() {
     });
   }, []);
 
-  const onCreate = (title, weight, set, count, date, calorie, content) => {
+  const onCreate = (title, weight, set, count, date, content) => {
+    const calorie = set * count * 8;
     dispatch({
       type:"CREATE",
       data:{
@@ -106,8 +107,9 @@ function App() {
     noRef.current += 1;
   };
 
-  const onUpdate = (no, title, weight, set, count, date ,calorie, content) => {
-    console.log("dispatch 호출 전", { no, title, weight, set, count, date, calorie });
+  const onUpdate = (no, title, weight, set, count, date, content) => {
+    console.log("dispatch 호출 전", { no, title, weight, set, count, date, content});
+    const calorie = set * count * 8;
     dispatch({
       type: "UPDATE",
       data: {
