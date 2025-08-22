@@ -1,6 +1,5 @@
 import Header from "../component/Header";
 import Button from "../component/Button";
-import Detail from "../component/Detail";
 import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { FitnessDispatchContext, FitnessStateContext } from "../App";
