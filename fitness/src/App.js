@@ -67,8 +67,8 @@ function reducer(state, action) {
   }
 }
 
-export const DiaryStateContext = React.createContext();
-export const DiaryDispatchContext = React.createContext();
+export const FitnessStateContext = React.createContext();
+export const FitnessDispatchContext = React.createContext();
 
 function App() {
 
@@ -125,8 +125,8 @@ function App() {
   }
 
   return (
-    <DiaryStateContext.Provider value={data}>
-      <DiaryDispatchContext.Provider
+    <FitnessStateContext.Provider value={data}>
+      <FitnessDispatchContext.Provider
         value={{
           onCreate,
           onUpdate,
@@ -141,8 +141,8 @@ function App() {
             <Route path="/exercise/:no" element={<Exercise />} /> 
           </Routes>
         </div>
-      </DiaryDispatchContext.Provider>  
-    </DiaryStateContext.Provider>
+      </FitnessDispatchContext.Provider>  
+    </FitnessStateContext.Provider>
   );
 }
 

@@ -3,14 +3,14 @@ import Update from "../component/Update";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../component/Header";
 import Button from "../component/Button";
-import { DiaryDispatchContext, DiaryStateContext } from "../App";
+import { FitnessDispatchContext, FitnessStateContext } from "../App";
 
 const Edit = () => {
 
     const navigate = useNavigate();
     const { no } = useParams();
-    const data = useContext(DiaryStateContext);
-    const { onUpdate } = useContext(DiaryDispatchContext)
+    const data = useContext(FitnessStateContext);
+    const { onUpdate } = useContext(FitnessDispatchContext)
     
 
 
