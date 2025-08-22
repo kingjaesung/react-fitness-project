@@ -41,7 +41,14 @@ const Home = () => {
     );
   }, [nowDate, data]);
 
-<<<<<<< HEAD
+  const increaseMonth = () => {
+    setNowDate(new Date(nowDate.getFullYear(), nowDate.getMonth() + 1));
+  };
+
+  const decreaseMonth = () => {
+    setNowDate(new Date(nowDate.getFullYear(), nowDate.getMonth() - 1));
+  };
+
     return (
         <div> 
             <Header
@@ -67,30 +74,5 @@ const Home = () => {
         </div>
     )
 }
-=======
-  const increaseMonth = () => {
-    setNowDate(new Date(nowDate.getFullYear(), nowDate.getMonth() + 1));
-  };
->>>>>>> 6c0e9900bb5eda9426de74df560daec7763eaac6
-
-  const decreaseMonth = () => {
-    setNowDate(new Date(nowDate.getFullYear(), nowDate.getMonth() - 1));
-  };
-
-  return (
-    <div className="list_main">
-      <Header
-        title={title}
-        left={<Button text="<" onClick={decreaseMonth} />}
-        right={<Button text=">" onClick={increaseMonth} />}
-      />
-      <Button text="등록" onClick={onClick} />
-      <hr />
-      <div>
-        <FitnessList value={filteredDate} />
-      </div>
-    </div>
-  );
-};
 
 export default Home;
