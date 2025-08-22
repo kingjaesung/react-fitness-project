@@ -4,7 +4,7 @@ import Home from "./page/Home";
 import New from "./page/New";
 import Edit from "./page/Edit";
 import Exercise from "./page/Exercise";
-import React, { useState, useReducer, useEffect, useRef } from "react";
+import React, { useReducer, useEffect, useRef } from "react";
 
 const today = new Date(); 
 
@@ -29,6 +29,7 @@ const mokData = [
     count: 12,
     date: formattedDate1,
     calorie: 50,
+    content: "test1",
   },
   {
     no: 1,
@@ -38,6 +39,7 @@ const mokData = [
     count: 12,
     date: formattedDate2,
     calorie: 50,
+    content: "test2",
   },
   {
     no: 2,
@@ -47,6 +49,7 @@ const mokData = [
     count: 12,
     date: formattedDate3,
     calorie: 50,
+    content: "test2",
   },
 ];
 
@@ -86,7 +89,7 @@ function App() {
     });
   }, []);
 
-  const onCreate = (title, weight, set, count, date, calorie) => {
+  const onCreate = (title, weight, set, count, calorie, content) => {
     dispatch({
       type:"CREATE",
       data:{
@@ -95,14 +98,19 @@ function App() {
         weight,
         set,
         count,
+<<<<<<< HEAD
         date,
+=======
+        date: formattedDate,
+>>>>>>> 4651ffe209a782c162ea0e0977075f73be4246f8
         calorie,
+        content,
       },
     });
     noRef.current += 1;
   };
 
-  const onUpdate = (no, title, weight, set, count, date ,calorie) => {
+  const onUpdate = (no, title, weight, set, count, date ,calorie, content) => {
     console.log("dispatch 호출 전", { no, title, weight, set, count, date, calorie });
     dispatch({
       type: "UPDATE",
@@ -114,6 +122,7 @@ function App() {
         count,
         date,
         calorie,
+        content,
       },
     });
   };

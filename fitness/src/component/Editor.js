@@ -32,13 +32,21 @@ const Editor = () => {
             <div className="editor_section">
                 <h4>운동 루틴 기록✏️</h4>
                 <div className="input_wrapper">
-                    <div className='numberInputDiv'>
-                        <label>무게 <input type='number' /> Kg</label>
-                        <label>세트 <input type='number' /></label>
-                        <label>반복횟수 <input type='number' /></label>
+                    <div className='titleInputDiv'>
+                        <label>제목</label>
+                        <input type='text'></input>
                     </div>
                     <div className='numberInputDiv'>
-                        <label>칼로리 소모량 <input type='text' readOnly /></label>
+                        <label>무게(단위:Kg)</label>
+                        <input type='number' />
+                        <label>세트</label>
+                        <input type='number' />
+                        <label>반복횟수</label>
+                        <input type='number' />
+                    </div>
+                    <div className='calInputDiv'>
+                        <label>칼로리 소모량</label>
+                        <input type='text' readOnly />
                     </div>
                     <textarea placeholder="오늘 운동 기록" />
                 </div>
