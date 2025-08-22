@@ -1,0 +1,44 @@
+.Detail_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  font-size: 30px;
+  align-items: center;
+}
+
+.Detail_div .item {
+  display: flex;
+  align-items: center;   /* 세로 가운데 정렬 */
+  margin-bottom: 10px;   /* 라벨과 값 쌍 간 간격 */
+  gap: 10px;             /* 라벨과 값 사이 간격 */
+  justify-content: center;
+  min-width: 500px;
+}
+
+.Detail_div > label {
+  display: flex;
+  border-bottom: 1px solid #A93F99;
+  border-radius: 20px;
+  width: 300px;
+  justify-content: center;
+  background-color: #FFD6E8;
+  color: #6B056B;
+  padding: 8px 0;
+  font-weight: 600;
+}
+
+.Detail_div > div > div {
+  display: flex;
+  border: 1px solid #3AB4B4;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 300px;
+  background-color: #E0FAF9;
+  color: #065F73;
+  box-shadow: 0 4px 8px rgba(58, 180, 180, 0.2);
+  justify-content: center;
+  font-weight: 500;
+}
+
