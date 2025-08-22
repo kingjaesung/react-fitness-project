@@ -29,9 +29,9 @@ const FitnessList = ({value}) => {
                 <td
                   key={month}
                   onClick={() => item && onClick(item.no)}
+                  className={item && item.no !== undefined && item.no !== null ? "include" : ""}
                 >
                   <label>{day}일</label><br />
-                  {item ? item.title : null}
                 </td>
               )
           })}
