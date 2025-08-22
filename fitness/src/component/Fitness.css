@@ -1,24 +1,7 @@
-.list_main {
-  display: flex;          /* 가로 일렬 배치 */
-  gap: 40px;              /* 아이템 사이 간격 */
-  justify-content: center;/* 부모 컨테이너 가로 중앙 정렬 */
-  padding: 20px;
-  background-color: #f0f0f0;
-}
+
 
 .list_main > div {
-  flex: 1;                /* 균등한 너비 */
-  max-width: 200px;       /* 최대 너비 제한 */
-  height: 200px;
-  background-color: lightgray;
-  border-radius: 8px;
 
-  display: flex;          /* 내부 컨텐츠 중앙 정렬을 위한 플렉스 */
-  justify-content: center;/* 수평 중앙 */
-  align-items: center;    /* 수직 중앙 */
-
-  font-size: 2rem;
-  font-weight: bold;
   cursor: pointer;        /* 버튼 느낌 */
   user-select: none;      /* 드래그 방지 */
 }
