@@ -14,13 +14,18 @@ const Home = ({}) => {
     const [filteredDate, setFilteredDate] = useState();
     const beginTime = new Date(nowDate.getFullYear(), nowDate.getMonth(), 1, 1).getTime();
     const endTime = new Date(nowDate.getFullYear(), nowDate.getMonth() + 1, 0, 23, 59, 59).getTime();
+    const targetTime = new Date(data.date).getTime();
 
     const onClick = () => {
         navigate("/new");
     };
 
     useEffect(() => {
-        setFilteredDate(data.filter(it) => beginTime <= it.date && it.date <= endTime));
+        setFilteredDate(
+            data.filter((it) => 
+                beginTime <= targetTime && targetTime <= endTime
+            )
+        );
     }, [data, nowDate]);
 
     const increaseMonth = () => {
@@ -40,7 +45,7 @@ const Home = ({}) => {
             />
             <Button type="defalut" text="등록" onClick={onClick}/><hr />
             {data.map((it) =>(
-                <FitnessList key={it.no} value={it}/>
+                <FitnessList key={it.no} value={it} data={filteredDate}/>
             ))}
         </div>
     )

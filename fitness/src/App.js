@@ -89,7 +89,7 @@ function App() {
     });
   }, []);
 
-  const onCreate = (title, weight, set, count, calorie, content) => {
+  const onCreate = (title, weight, set, count, date, calorie, content) => {
     dispatch({
       type:"CREATE",
       data:{
@@ -98,11 +98,7 @@ function App() {
         weight,
         set,
         count,
-<<<<<<< HEAD
         date,
-=======
-        date: formattedDate,
->>>>>>> 4651ffe209a782c162ea0e0977075f73be4246f8
         calorie,
         content,
       },
