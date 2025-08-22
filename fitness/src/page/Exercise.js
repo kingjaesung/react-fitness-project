@@ -23,18 +23,19 @@ const Exercise = () => {
     navigate(`/edit/${target.no}`, { state: { target } });
   };
 
-    const onClickDelete = () =>{
-        if(window.confirm("항목을 삭제할까요? 복구 안됩니다!"));
-        onDelete(target.no);
-        navigate("/",{replace:true });
-    }
+  const onClickDelete = () => {
+    if (window.confirm("항목을 삭제할까요? 복구 안됩니다!"));
+    onDelete(target.no);
+    navigate("/", { replace: true });
+  };
   
     return(
-        <div>
-            <Header 
+    <div>
+      <Header
                 left={<Button text="수정하기" type="positive" onClick={goEdit}/>}
-                title={target.title}
+        title={target.title}
                 right={<Button text="삭제하기" type="negative" onClick={onClickDelete}/>}
+<<<<<<< HEAD
             />
             <Detail
                 title={target.title}
@@ -52,5 +53,19 @@ const Exercise = () => {
 
  
 
+=======
+      />
+      <Detail
+        title={target.title}
+        weight={target.weight}
+        set={target.set}
+        count={target.count}
+        date={target.date}
+        calorie={target.calorie}
+      />
+    </div>
+  );
+};
+>>>>>>> 972869c0b2283473798f276297534a63257b6f64
 
 export default Exercise;
