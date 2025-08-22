@@ -43,15 +43,8 @@ const Home = () => {
                 left={<Button text="<" onClick={decreaseMonth}/>}
                 right={<Button text=">" onClick={increaseMonth}/>}
             />
-<<<<<<< HEAD
             <Button text="등록" onClick={onClick}/><hr />
             <FitnessList value={filteredDate}/>
-=======
-            <Button type="default" text="등록" onClick={onClick}/><hr />
-            {data.map((it) =>(
-                <FitnessList key={it.no} value={it}/>
-            ))}
->>>>>>> ae42f12b428399a5bcaca75e3f29e14367360971
         </div>
     )
 }
