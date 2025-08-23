@@ -42,6 +42,7 @@ const Exercise = () => {
             count={target.count}
             date={target.date}
             calorie={target.calorie}
+            content={target.content}
         />
     </div>
   );
