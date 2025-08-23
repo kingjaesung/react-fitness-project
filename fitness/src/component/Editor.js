@@ -20,7 +20,11 @@ const Editor = ({ initData, onSubmit }) => {
   const handleOnSubmit = () => {
     console.log(typeof onSubmit);
     if (onSubmit) {
-      onSubmit(state);
+      if(!previewUrl){
+        alert("사진을 추가하세요!");
+        return;
+      }
+      onSubmit({...state, previewUrl}); //사진 URL 생성한 값까지 전달
     }
   };
 
@@ -29,6 +33,9 @@ const Editor = ({ initData, onSubmit }) => {
       setState({
         ...initData,
       });
+      if(initData.previewUrl){
+        setPreviewUrl(initData.previewUrl);
+      }
     }
   }, [initData]);
 

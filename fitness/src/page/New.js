@@ -15,17 +15,16 @@ const New = () => {
     }
 
 const onSubmit = (data) => {
-    const { title, weight, set, count, date, content } = data;
+    const { title, weight, set, count, date, content, previewUrl} = data;
     if (!title || !weight || !set || !count || !content) {
         alert("모든 항목을 입력해 주세요 !");
         return;
     } else {
-        // ⚡️칼로리 계산해서 같이 넘김
+        // 칼로리 계산해서 같이 넘김
         const calorie = set * count * 8;
-
+        console.log(data);
         // onCreate 호출 시 calorie까지 넘김
-        onCreate(title, weight, set, count, date, calorie, content);
-
+        onCreate({title, weight, set, count, date, calorie, content, previewUrl});
         navigate("/", { replace: true });
     }
 };

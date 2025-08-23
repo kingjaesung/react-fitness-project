@@ -1,6 +1,6 @@
 import "./Detail.css";
 
-const Detail = ({ title, weight, set, count, date, calorie, content }) => {
+const Detail = ({ title, weight, set, count, date, calorie, content, previewUrl}) => {
   return (
     <div className={["Detail_div Detail"].join(" ")}>
       <div className="item">
@@ -30,6 +30,9 @@ const Detail = ({ title, weight, set, count, date, calorie, content }) => {
       <div className="item">
         <label>운동기록 : </label>
         <div>{content}</div>
+      </div>
+      <div>
+        <img src={previewUrl} alt="미리보기"></img> {/* 이미지 표시할 칸 테스트 (진섭) */}
       </div>
     </div>
   );

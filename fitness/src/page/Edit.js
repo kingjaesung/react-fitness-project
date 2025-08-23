@@ -24,9 +24,9 @@ const Edit = () => {
 
   const clickOnUpdate = (eItem) => {
     if (window.confirm("일기를 정말 수정할까요?")) {
-      const { date, no, weight, title, count, set, content} = eItem;
-      console.log("edit에서 update 함수 호출시 값 "+date, no, weight, title, count, set,  content);
-      onUpdate(no, title, weight, set, count, date,  content);
+      const { date, no, weight, title, count, set, content, previewUrl} = eItem; //prviewUrl 추가
+      console.log("edit에서 update 함수 호출시 값 "+date, no, weight, title, count, set,  content, previewUrl);
+      onUpdate({no, title, weight, set, count, date,  content, previewUrl}); //객체형태로 수정(진섭)
       navigate("/", { replace: true });
     }
   };

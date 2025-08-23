@@ -89,7 +89,7 @@ function App() {
     });
   }, []);
 
-  const onCreate = (title, weight, set, count, date, content) => {
+  const onCreate = ({title, weight, set, count, date, content, previewUrl}) => { //객체 형태로 변경 {} 추가 (진섭)
     const calorie = set * count * 0.5;
     dispatch({
       type:"CREATE",
@@ -102,13 +102,14 @@ function App() {
         date,
         calorie,
         content,
+        previewUrl,//url값 전달위해 추가(진섭)
       },
     });
     noRef.current += 1;
   };
 
-  const onUpdate = (no, title, weight, set, count, date , content) => {
-    console.log("dispatch 호출 전", { no, title, weight, set, count, date, content});
+  const onUpdate = ({no, title, weight, set, count, date , content, previewUrl}) => { //객체 형태로 변경 {} 추가 (진섭)
+    console.log("dispatch 호출 전", { no, title, weight, set, count, date, content, previewUrl});
     const calorie = set * count * 0.5;
     dispatch({
       type: "UPDATE",
@@ -121,6 +122,7 @@ function App() {
         date,
         calorie,
         content,
+        previewUrl, //url값 전달위해 추가(진섭)
       },
     });
   };

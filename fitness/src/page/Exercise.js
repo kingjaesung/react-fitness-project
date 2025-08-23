@@ -43,6 +43,7 @@ const Exercise = () => {
             date={target.date}
             calorie={target.calorie}
             content={target.content}
+            previewUrl={target.previewUrl} //previewUrl 추가(진섭)
         />
     </div>
   );
