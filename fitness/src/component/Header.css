@@ -12,8 +12,10 @@
 
 .Header .header_title {
     width: 50%;
-    font-size: 25px;
+    font-size: 1.4rem;
+    font-weight: 600;
     justify-content: center;
+    margin: 0;
 }
 
 .Header .header_left{

@@ -8,16 +8,35 @@
 }
 
 .Button_default{
-    background-color: #ececec;
+    background-color: #f1f1f1;
     color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
 .Button_positive{
-    background-color: #64c964;
-    color: white;
+background-color: #f1f1f1;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
 .Button_negative{
-    background-color: #fd565f;
-    color:white;
+background-color: #f1f1f1;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.Button_default:hover {
+    background: #e2e2e2;
 }

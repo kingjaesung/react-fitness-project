@@ -28,23 +28,21 @@ const Exercise = () => {
     onDelete(target.no);
     navigate("/", { replace: true });
   };
-
-    return(
+            return(
     <div>
-      <Header
-                left={<Button text="수정하기" type="positive" onClick={goEdit}/>}
-        title={target.title}
-                right={<Button text="삭제하기" type="negative" onClick={onClickDelete}/>}
-      />
-      <Detail
-        title={target.title}
-        weight={target.weight}
-        set={target.set}
-        count={target.count}
-        date={target.date}
-        calorie={target.calorie}
-        content={target.content}
-      />
+        <Header
+            left={<Button text="수정하기" type="positive" onClick={goEdit}/>}
+            title={target.title}
+            right={<Button text="삭제하기" type="negative" onClick={onClickDelete}/>}
+        />
+        <Detail
+            title={target.title}
+            weight={target.weight}
+            set={target.set}
+            count={target.count}
+            date={target.date}
+            calorie={target.calorie}
+        />
     </div>
   );
 };

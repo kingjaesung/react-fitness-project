@@ -90,7 +90,7 @@ function App() {
   }, []);
 
   const onCreate = (title, weight, set, count, date, content) => {
-    const calorie = set * count * 8;
+    const calorie = set * count * 0.5;
     dispatch({
       type:"CREATE",
       data:{
@@ -107,9 +107,9 @@ function App() {
     noRef.current += 1;
   };
 
-  const onUpdate = (no, title, weight, set, count, date, content) => {
+  const onUpdate = (no, title, weight, set, count, date , content) => {
     console.log("dispatch 호출 전", { no, title, weight, set, count, date, content});
-    const calorie = set * count * 8;
+    const calorie = set * count * 0.5;
     dispatch({
       type: "UPDATE",
       data: {

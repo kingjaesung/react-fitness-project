@@ -1,0 +1,54 @@
+.calendar {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+th {
+    font-weight: 600;
+    color: #666;
+    padding: 10px 0;
+}
+
+td {
+    padding: 14px 0;
+    border-radius: 10px;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    color: #000;
+}
+
+td:first-child, th:first-child{
+    color: #d64545;
+}
+
+th:last-child, td:last-child {
+    color: #3b82f6;
+}
+
+td.include {
+    background: #e6f8ed;
+    color: #2a9d4b;
+    font-weight: 600;
+}
+
+td:hover {
+    background: #f2f2f2;
+    color: #333;
+}
+
+td.include:hover {
+    background: #2a9d4b;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+}

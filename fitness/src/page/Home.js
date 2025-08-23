@@ -4,18 +4,16 @@ import Button from "../component/Button";
 import { useContext, useState, useEffect } from "react";
 import { FitnessStateContext } from "../App";
 import { useNavigate } from "react-router-dom";
+import "./Home.css";
 
 const Home = () => {
   const data = useContext(FitnessStateContext);
-  const navigate = useNavigate();
-
+  
   const [nowDate, setNowDate] = useState(new Date());
   const title = `${nowDate.getFullYear()}년 ${nowDate.getMonth() + 1}월`;
   const [filteredDate, setFilteredDate] = useState([]);
-
-  const onClick = () => {
-    navigate("/new");
-  };
+  const [year, setYear] = useState(new Date().getFullYear());
+  const [month, setMonth] = useState(new Date().getMonth());
 
   useEffect(() => {
     const beginTime = new Date(
@@ -42,21 +40,32 @@ const Home = () => {
   }, [nowDate, data]);
 
   const increaseMonth = () => {
+    if(month === 11) {
+        setYear(year + 1);
+        setMonth(0);
+    }else {
+        setMonth(month + 1);
+    }
     setNowDate(new Date(nowDate.getFullYear(), nowDate.getMonth() + 1));
   };
 
   const decreaseMonth = () => {
+    if(month === 11){
+        setYear(year + 1);
+        setMonth(11);
+    }else{
+        setMonth(month - 1);
+    }
     setNowDate(new Date(nowDate.getFullYear(), nowDate.getMonth() - 1));
   };
 
     return (
-        <div> 
+        <div className="calendar"> 
             <Header
                 title={title}
                 left={<Button text="<" onClick={decreaseMonth}/>}
                 right={<Button text=">" onClick={increaseMonth}/>}
             />
-            <Button text="등록" onClick={onClick}/><hr />
             <table>
                 <thead>
                     <tr>
@@ -69,7 +78,7 @@ const Home = () => {
                         <th>토</th>
                     </tr>
                 </thead>
-                {<FitnessList value={filteredDate}/>}
+                {<FitnessList year={year} month={month} value={filteredDate}/>}
             </table>
         </div>
     )
