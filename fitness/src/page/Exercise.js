@@ -28,7 +28,7 @@ const Exercise = () => {
     onDelete(target.no);
     navigate("/", { replace: true });
   };
-  
+
     return(
     <div>
       <Header
@@ -43,6 +43,7 @@ const Exercise = () => {
         count={target.count}
         date={target.date}
         calorie={target.calorie}
+        content={target.content}
       />
     </div>
   );
