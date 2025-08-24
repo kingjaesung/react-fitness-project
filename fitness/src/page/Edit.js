@@ -34,7 +34,7 @@ const Edit = () => {
   return (
     <div>
       <Header
-        title={"상세운동 수정"}      
+        title={"운동정보 수정"}      
       />
 
       <Editor  initData={eItem} onSubmit={clickOnUpdate}/>

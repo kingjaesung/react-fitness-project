@@ -3,6 +3,8 @@ import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
+
 const Editor = ({ initData, onSubmit, selectDate }) => {
   const [state, setState] = useState({
     title: "",
@@ -15,25 +17,36 @@ const Editor = ({ initData, onSubmit, selectDate }) => {
   });
 
   const navigate = useNavigate();
+  // URL 값입력 상태변수
   const [previewUrl, setPreviewUrl] = useState(null);
+  // 사용자가 선택한 파일
+  const [selectedFile, setSelectedFile] = useState(null);
+  // 파일 미선택시 메시지 text
+  const [message, setMessage] = useState("선택한 파일이 없을 시 기존 파일로 업데이트 됩니다");
 
   const handleOnSubmit = () => {
-    console.log(typeof onSubmit);
+     console.log("handleOnSubmit called");
     if (onSubmit) {
-      if(!previewUrl){
+      if (!previewUrl) {
         alert("사진을 추가하세요!");
         return;
       }
-      onSubmit({...state, previewUrl}); //사진 URL 생성한 값까지 전달
+      if (!selectedFile) {
+        setMessage("파일을 선택하지 않아 기존 파일로 업데이트 됩니다.");
+      } else {
+        setMessage("");
+      }
+      onSubmit({ ...state, previewUrl, selectedFile });
     }
   };
+
 
   useEffect(() => {
     if (initData) {
       setState({
         ...initData,
       });
-      if(initData.previewUrl){
+      if (initData.previewUrl) {
         setPreviewUrl(initData.previewUrl);
       }
     }
@@ -44,6 +57,8 @@ const Editor = ({ initData, onSubmit, selectDate }) => {
     if (file) {
       const imageUrl = URL.createObjectURL(file);
       setPreviewUrl(imageUrl);
+      setSelectedFile(file);
+      setMessage(""); // 파일 선택 시 메시지 초기화
     }
   };
 
@@ -59,8 +74,8 @@ const Editor = ({ initData, onSubmit, selectDate }) => {
     });
   };
 
-  const contentHandleChange= (e) => {
-    
+  const contentHandleChange = (e) => {
+
     const value = e.target.value;
 
     setState({
@@ -70,6 +85,8 @@ const Editor = ({ initData, onSubmit, selectDate }) => {
   }
 
   console.log(state.content);
+  console.log("파일 미선택 메시지"+ message);
+
 
   return (
     <div className="Editor">
@@ -77,17 +94,18 @@ const Editor = ({ initData, onSubmit, selectDate }) => {
       <div className="editor_section">
         <h4>날짜 입력📆</h4>
         <div className="input_wrapper">
-          <input 
-          type="date"
-          name="date"
-          value={state.date}
-          onChange={handleChange}
-          readOnly={!!selectDate}
+          <input
+            type="date"
+            name="date"
+            value={state.date}
+            onChange={handleChange}
+            readOnly={!!selectDate}
           />
         </div>
       </div>
 
       {/* 사진 */}
+      {/* 운동 사진 */}
       <div className="editor_section">
         <h4>운동 사진🖼️</h4>
         <div className="imgOutter">
@@ -100,11 +118,14 @@ const Editor = ({ initData, onSubmit, selectDate }) => {
               )}
             </span>
           </div>
-          <input 
-          type="file" 
-          accept="image/*" 
-          onChange={handleFileChange}
-           />
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
+          />
+          {message && (
+            <p style={{ fontSize: "20px", color: "red", marginTop: "1px" }}>{message}</p>
+          )}
         </div>
       </div>
 
@@ -151,16 +172,16 @@ const Editor = ({ initData, onSubmit, selectDate }) => {
           </div>
           <div className="calInputDiv">
             <label>칼로리 소모량</label>
-            <input 
-            type="text"
-            name="calorie"
-            value={state.set * state.count * 0.8} 
-            readOnly 
+            <input
+              type="text"
+              name="calorie"
+              value={state.set * state.count * 0.8}
+              readOnly
             />
           </div>
-          <textarea 
-            placeholder="오늘 운동 기록" 
-            name="content" 
+          <textarea
+            placeholder="오늘 운동 기록"
+            name="content"
             value={state.content}
             onChange={contentHandleChange}
           />

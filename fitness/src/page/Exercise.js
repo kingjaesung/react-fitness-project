@@ -13,6 +13,7 @@ const Exercise = () => {
   const { no } = useParams();
 
   const target = data.find((it) => String(it.no) === no);
+  // find는 일치하는 첫번쨰 요소를 반환
 
   if (!target) {
     return <div>존재하지 않는 항목입니다.</div>;
