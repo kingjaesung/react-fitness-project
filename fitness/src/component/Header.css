@@ -1,21 +1,23 @@
 .Header {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 16px 20px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #e2e2e2;
+    border-bottom: 2px solid #1b4d4d;
+    font-family: 'Pretendard', sans-serif;
 }
 
 .Header > div {
     display: flex;
+    align-items: center;
 }
 
 .Header .header_title {
     width: 50%;
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
     justify-content: center;
-    margin: 0;
+    display: flex;
+    color: #333;
 }
 
 .Header .header_left{
