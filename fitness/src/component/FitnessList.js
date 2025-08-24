@@ -7,7 +7,8 @@ const FitnessList = ({year, month, value}) => {
   const monthDays = new Date(year, month + 1, 0).getDate(); // 1일부터 마지막날까지
   const firstDay = new Date(year, month, 1).getDay(); // 0=일요일, 1=월요일...6=토요일
   
-  const cells = []; // 1달 날짜 배열
+  // 달력 코드
+  const cells = [];
   // 앞쪽 빈칸
   for(let i = 0; i < firstDay; i++) {
     cells.push(null);
@@ -27,6 +28,7 @@ const FitnessList = ({year, month, value}) => {
     weeks.push(cells.slice(i, i + 7));
   }
 
+  // 버튼 클릭시 기능 구현
   const onClick = (no) => {
     if(!no && no !== 0){
       navigate("/New");
@@ -41,7 +43,7 @@ const FitnessList = ({year, month, value}) => {
         <tr key={wIndex}>
           {week.map((day, dIndex) => {
             if(!day) {
-              return <td key={`empty-${wIndex}-${dIndex}`}></td>
+              return <td key={`${wIndex}-${dIndex}`}></td>
             }
             const item = value.find(
               (it) => Number(it.date.split("-")[2]) === day);

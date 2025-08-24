@@ -1,6 +1,23 @@
 import "./Detail.css";
+import Button from "./Button";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { FitnessDispatchContext } from "../App";
 
-const Detail = ({ title, weight, set, count, date, calorie, content, previewUrl}) => {
+const Detail = ({ no, title, weight, set, count, date, calorie, content, previewUrl }) => {
+  const navigate = useNavigate();
+  const { onDelete } = useContext(FitnessDispatchContext);
+
+  const goEdit = () => {
+    navigate(`/edit/${no}`, { state: { title, weight, set, count, date, calorie, content, previewUrl } });
+  };
+
+  const onClickDelete = () => {
+    if (window.confirm("항목을 삭제할까요? 복구 안됩니다!"));
+    onDelete(no);
+    navigate("/", { replace: true });
+  };
+
   return (
     <div className={["Detail_div Detail"].join(" ")}>
       <div className="item">
@@ -32,7 +49,11 @@ const Detail = ({ title, weight, set, count, date, calorie, content, previewUrl}
         <div>{content}</div>
       </div>
       <div>
-        <img src={previewUrl} alt="미리보기"></img> {/* 이미지 표시할 칸 테스트 (진섭) */}
+        <img className="img" src={previewUrl} alt="미리보기"></img> {/* 이미지 표시할 칸 테스트 (진섭) */}
+      </div>
+      <div className="Butten_div">
+        <Button text="수정하기" type="positive" onClick={goEdit}/>
+        <Button text="삭제하기" type="negative" onClick={onClickDelete}/>
       </div>
     </div>
   );

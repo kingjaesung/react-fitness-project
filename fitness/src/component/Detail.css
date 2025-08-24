@@ -38,6 +38,28 @@ label {
   word-break: break-word;
 }
 
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 20px auto 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+}
+
+.Butten_div {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  margin-top: 20px;
+} 
+
+.Butten_div button {
+  padding: 10px 20px;
+  font-size: 18px;
+} 
+
 /* .Detail_div {
   display: flex;
   flex-direction: column;

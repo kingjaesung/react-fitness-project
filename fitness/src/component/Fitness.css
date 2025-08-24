@@ -8,3 +8,11 @@
     background-color: #64c964;
     color: white;
 }
+
+td.sunday label {
+  color: #d64545;
+}
+
+td.saturday label {
+  color: #3b82f6;
+}

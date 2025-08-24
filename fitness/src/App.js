@@ -10,12 +10,10 @@ const today = new Date();
 
 const year = today.getFullYear(); // 연도 (4자리)
 const month = String(today.getMonth() + 1).padStart(2, "0"); // 월 (1~12, 2자리로 맞춤)
-//const day = String(today.getDate()).padStart(2, "0"); // 일 (2자리로 맞춤)
 const day1 = String(today.getDate()).padStart(2, "0");
 const day2 = String(today.getDate() + 1).padStart(2, "0");
 const day3 = String(today.getDate() + 2).padStart(2, "0");
 
-//const formattedDate = `${year}-${month}-${day}`;
 const formattedDate1 = `${year}-${month}-${day1}`;
 const formattedDate2 = `${year}-${month}-${day2}`;
 const formattedDate3 = `${year}-${month}-${day3}`;
@@ -23,13 +21,14 @@ const formattedDate3 = `${year}-${month}-${day3}`;
 const mokData = [
   {
     no: 0,
-    title: "밴체프레스",
+    title: "벤치프레스",
     weight: 60,
     set: 5,
     count: 12,
     date: formattedDate1,
     calorie: 240,
     content: "test1",
+    previewUrl: "https://www.k-health.com/news/photo/202310/67751_74220_4433.jpg"
   },
   {
     no: 1,
@@ -40,6 +39,7 @@ const mokData = [
     date: formattedDate2,
     calorie: 240,
     content: "test2",
+    previewUrl: "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/5796681139/B.jpg?692000000"
   },
   {
     no: 2,
@@ -50,6 +50,7 @@ const mokData = [
     date: formattedDate3,
     calorie: 240,
     content: "test2",
+    previewUrl: "https://www.tradeinn.com/f/13756/137567759/softee-%EC%82%BC%EB%91%90%EA%B7%BC-%EB%94%A5%EC%8A%A4.webp"
   },
 ];
 
