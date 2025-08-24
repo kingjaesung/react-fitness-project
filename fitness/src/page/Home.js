@@ -6,6 +6,7 @@ import { FitnessStateContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
+
 const Home = () => {
   const data = useContext(FitnessStateContext);
   
@@ -20,7 +21,7 @@ const Home = () => {
       nowDate.getFullYear(),
       nowDate.getMonth(),
       1,
-      1
+      0
     ).getTime();
     const endTime = new Date(
       nowDate.getFullYear(),
