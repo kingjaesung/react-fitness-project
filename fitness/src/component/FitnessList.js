@@ -29,9 +29,10 @@ const FitnessList = ({year, month, value}) => {
   }
 
   // 버튼 클릭시 기능 구현
-  const onClick = (no) => {
+  const onClick = (no, day) => {
     if(!no && no !== 0){
-      navigate("/New");
+      const selectDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+      navigate("/New", {state: {selectDate}});
     }else {
       navigate(`/exercise/${no}`);
     }
@@ -57,7 +58,7 @@ const FitnessList = ({year, month, value}) => {
               return (
                 <td
                   key={`day-${day}`}
-                  onClick={() => onClick(item ? item.no : null)}
+                  onClick={() => onClick(item ? item.no : null, day)}
                   className={`${item ? "include" : "non"} ${extraClass}`}
                 >
                   <label >

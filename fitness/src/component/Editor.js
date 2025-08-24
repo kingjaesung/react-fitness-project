@@ -3,13 +3,13 @@ import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const Editor = ({ initData, onSubmit }) => {
+const Editor = ({ initData, onSubmit, selectDate }) => {
   const [state, setState] = useState({
     title: "",
     weight: 20,
     set: 1,
     count: 1,
-    date: "",
+    date: selectDate || "",
     calorie: 0,
     content: "",
   });
@@ -82,6 +82,7 @@ const Editor = ({ initData, onSubmit }) => {
           name="date"
           value={state.date}
           onChange={handleChange}
+          readOnly={!!selectDate}
           />
         </div>
       </div>

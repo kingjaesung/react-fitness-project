@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../component/Header";
 import Button from "../component/Button";
 import Editor from "../component/Editor";
@@ -9,6 +9,8 @@ import { FitnessDispatchContext } from "../App";
 const New = () => {
     const navigate = useNavigate();
     const {onCreate} = useContext(FitnessDispatchContext);
+    const location = useLocation();
+    const selectDate =location.state?.selectDate || "";
     
     const goBack = () => {
         navigate(-1);
@@ -34,7 +36,7 @@ const onSubmit = (data) => {
     return (
         <div> 
             <Header title={headerTitle} left={<Button text="< 뒤로가기" onClick={goBack} />} />
-            <Editor onSubmit={onSubmit} />
+            <Editor onSubmit={onSubmit} selectDate={selectDate} />
         </div>
     )
 }
