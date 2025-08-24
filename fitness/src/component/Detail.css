@@ -51,13 +51,13 @@ label {
 .Butten_div {
   display: flex;
   justify-content: center;
-  gap: 150px;
+  gap: 200px;
   margin-top: 20px;
 } 
 
 .Butten_div button {
   padding: 10px 20px;
-  font-size: 18px;
+  font-size: 14px;
 } 
 
 /* .Detail_div {

@@ -25,7 +25,7 @@ const Exercise = () => {
   return(
     <div>
         <Header
-            left={<Button text="뒤로가기" onClick={goback}/>}
+            left={<Button text="<뒤로가기" onClick={goback}/>}
             title={target.title}
         />
         <Detail

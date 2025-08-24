@@ -62,7 +62,7 @@ const Home = () => {
 
     return (
         <div className="calendar"> 
-            <h1>나의 운동 기록</h1>
+            <h2>나의 운동 기록</h2>
             <Header
                 title={title}
                 left={<Button text="<" onClick={decreaseMonth}/>}

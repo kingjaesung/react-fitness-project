@@ -4,15 +4,28 @@
   user-select: none;      /* 드래그 방지 */
 }
 
-.include{
-    background-color: #64c964;
-    color: white;
+td.include:hover {
+  background: #2a9d4b;
 }
 
-td.sunday label {
+td.include:hover label {
+  color: #fff;
+  cursor: pointer;
+}
+
+td.non:hover label { 
+  color: #333;
+  cursor: pointer;
+}
+
+td.sunday label, td.sunday:hover label {
   color: #d64545;
 }
 
-td.saturday label {
+td.saturday label, td.saturday:hover label {
   color: #3b82f6;
+}
+
+td.include.sunday:hover label {
+  color: #fff;
 }
