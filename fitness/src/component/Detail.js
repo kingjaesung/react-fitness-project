@@ -13,9 +13,12 @@ const Detail = ({ no, title, weight, set, count, date, calorie, content, preview
   };
 
   const onClickDelete = () => {
-    if (window.confirm("항목을 삭제할까요? 복구 안됩니다!"));
-    onDelete(no);
-    navigate("/", { replace: true });
+    if (window.confirm("항목을 삭제할까요? 복구 안됩니다!")){
+      onDelete(no);
+      navigate("/", { replace: true });  
+    }else {
+      return;
+    }
   };
 
   return (
