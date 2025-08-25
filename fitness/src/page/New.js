@@ -9,8 +9,8 @@ import { FitnessDispatchContext } from "../App";
 const New = () => {
     const navigate = useNavigate();
     const {onCreate} = useContext(FitnessDispatchContext);
-    const location = useLocation();
-    const selectDate =location.state?.selectDate || "";
+    const location = useLocation(); //현재 페이지로 넘어올 때 navigate에서 전달한 state값 가져오기 위한 훅
+    const selectDate =location.state?.selectDate || ""; //값이 없으면 에러처리가 아니라 undefined반환
     
     const goBack = () => {
         navigate(-1);
