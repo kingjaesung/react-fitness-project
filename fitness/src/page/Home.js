@@ -6,6 +6,7 @@ import { FitnessStateContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
+
 const Home = () => {
   const data = useContext(FitnessStateContext);
   
@@ -20,7 +21,7 @@ const Home = () => {
       nowDate.getFullYear(),
       nowDate.getMonth(),
       1,
-      1
+      0
     ).getTime();
     const endTime = new Date(
       nowDate.getFullYear(),
@@ -39,6 +40,8 @@ const Home = () => {
     );
   }, [nowDate, data]);
 
+  // 지금 시각이 이번달 1일 0시0분 이상 이번달 마지막 날 23시 59분 59초 전일때
+
   const increaseMonth = () => {
     if(month === 11) {
         setYear(year + 1);
@@ -50,8 +53,8 @@ const Home = () => {
   };
 
   const decreaseMonth = () => {
-    if(month === 11){
-        setYear(year + 1);
+    if(month === 0){
+        setYear(year -1);
         setMonth(11);
     }else{
         setMonth(month - 1);
@@ -61,7 +64,7 @@ const Home = () => {
 
     return (
         <div className="calendar"> 
-            <h2>나의 운동 기록</h2>
+            <h1>나의 운동 기록</h1>
             <Header
                 title={title}
                 left={<Button text="<" onClick={decreaseMonth}/>}

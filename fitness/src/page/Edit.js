@@ -23,7 +23,7 @@ const Edit = () => {
   
 
   const clickOnUpdate = (eItem) => {
-    if (window.confirm("일기를 정말 수정할까요?")) {
+    if (window.confirm("정말 수정할까요?")) {
       const { date, no, weight, title, count, set, content, previewUrl} = eItem; //prviewUrl 추가
       console.log("edit에서 update 함수 호출시 값 "+date, no, weight, title, count, set,  content, previewUrl);
       onUpdate({no, title, weight, set, count, date,  content, previewUrl}); //객체형태로 수정(진섭)
@@ -34,7 +34,7 @@ const Edit = () => {
   return (
     <div>
       <Header
-        title={"상세운동 수정"}      
+        title={"운동정보 수정"}      
       />
 
       <Editor  initData={eItem} onSubmit={clickOnUpdate}/>
